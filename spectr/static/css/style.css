@@ -2396,25 +2396,45 @@
      white-space: nowrap;
 }
  
+#headerImage {
+    width:100%;        
+    margin-left:auto;
+    margin-right:auto;
+    background-position:center;
+    background-repeat:no-repeat;
+   }
+
+#greeting{
+  
+  padding: 0px;
+  position: relative;
+
+}
+
+#greetin-h1{
+text-align: right;
+color:#000;
+  position: absolute;
+  top:70%;
+  left:120%;
+  transform:translate(-40%,-60%);
+  z-index: 9999;
+  font-family: Lucida Handwriting;
+  
+}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+a .spacer {
+    color: #00ebff
+  }
+  
+a:hover {
+    color: #00ebff;
+  }
+  
+a:hover .spacer {
+    color: #fff;
+  }

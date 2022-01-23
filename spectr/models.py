@@ -45,4 +45,10 @@ class Order(models.Model):
     description = models.CharField(max_length=200)
     done = models.CharField(max_length=100)
 
+class Carousel(models.Model):
+    text = models.TextField(max_length=200)
+    image = models.ImageField(upload_to='images')
+    active = models.BooleanField(default=True)
+
+
 # Create your models here.

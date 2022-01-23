@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+   a:link {
+    color: #0000d0; /* Цвет ссылок */
+    padding: 2px; /* Поля вокруг текста */ 
+   }
+   a:hover {
+    background: #786b59; /* Цвет фона под ссылкой */ 
+    color: #ffe; /* Цвет ссылки */ 
+   } 
+  </style>
+
+</head>
+
+<body>
+                    
+                    <div class="our-link">
+                        <ul>
+                            {% comment %} <li><a href="#">My Account</a></li> {% endcomment %}
+                            {% comment %} <li><a href="#">Наше местоположение</a></li>
+                            <li><a href="#">Связаться</a></li> {% endcomment %}
+                    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Top -->
+
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <div id="greeting">
+                        <a class="navbar-brand" href="index.html"><img id="headerImage" style="width:70px;" src="{% static 'images/thread.png' %}" class="logo" alt=""></a>
+                        <h1 id="greetin-h1">SPECTR MASTER</h1>
+                    </div>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="{% url "spectr:index" %}">Главное</a></li>
+                        {% comment %} <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li> {% endcomment %}
+                        <li class="dropdown megamenu-fw">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Наши услуги</a>
+                            <ul class="dropdown-menu megamenu-content" role="menu">
+                                <li>
+                                    <div style='width 300px;' class="row">
+                                        <div style='width: 300px;'>
+                                            <h6 style='padding-left:50px' class="title">Top</h6>
+                                            <div style='padding-left:50px' class="content">
+                                                <ul class="menu-col">
+                                                    {% for category in categorys %}   
+                                                        <p><a href="{% url 'spectr:category_detail' pk=category.id %}"><h1> {{category.name}} </h1></a></p>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                        
+                                    </div>
+                                    <!-- end row -->
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'spectr:contact_us' %}">Связаться с нами</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+
+                <!-- Start Atribute Navigation -->
+                {% comment %} <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu"><a href="#">
+						<i class="fa fa-shopping-bag"></i>
+                            <span class="badge">3</span>
+					</a></li>
+                    </ul>
+                </div> {% endcomment %}
+                <!-- End Atribute Navigation -->
+            </div>
+            
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+
+    {% block content %}
+
+
+    {% endblock %}
+
+  
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>О нас</h4>
+                            <p>Наши специалисты сделают для вас визуализацию будущих изделий в желаемом цвете и с брендированием. Вам же останется утвердить заказ в работу.
+                                </p>
+                            {% comment %} <ul>
+                                <li><a href="https://t.me/SpectrMaster" target="_blank"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a></li>
+                                <li><a href="https://api.whatsapp.com/send? phone=+996553102424" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul> {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>ИНФОРМАЦИЯ</h4>
+                            <ul>
+                                {% comment %} <li><a href="#">Отзывы</a></li>
+                                <li><a href="#">Актуальные вопросы</a></li> {% endcomment %}
+                                <li><a href="#">Информация о доставке</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>СВЯЗАТЬСЯ С НАМИ</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Адрес: Кыргызстан, город Бишкек<br>улица Матросова,<br> 1А </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Телефон: <a href="tel:+996553102424">+996553102424</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:ulanzhumagaziev@gmail.com">ulanzhumagaziev@gmail.com</a></p>
+                                </li>
+                                 <li>
+                                    <p><a href="https://t.me/SpectrMaster" target="_blank"><i class="fab fa-telegram"></i>Telegram: SpectrMaster</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://api.whatsapp.com/send? phone=+996553102424" target="_blank"><i class="fab fa-whatsapp"></i>Whatsapp</a></p>
+                                </li>
+                            </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/jquery.superslides.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.js' %}"></script>
+    <script src="{% static 'js/inewsticker.js' %}"></script>
+    <script src="{% static 'js/bootsnav.js.' %}"></script>
+    <script src="{% static 'js/images-loded.min.js' %}"></script>
+    <script src="{% static 'js/isotope.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js ' %}"></script>
+    <script src="{% static 'js/baguetteBox.min.js' %}"></script>
+    <script src="{% static 'js/form-validator.min.js' %}"></script>
+    <script src="{% static 'js/contact-form-script.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
